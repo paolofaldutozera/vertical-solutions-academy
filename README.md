@@ -1,0 +1,1 @@
+# vertical-solutions-academy
