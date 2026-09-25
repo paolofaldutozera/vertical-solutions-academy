@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Vertical Solutions Academy: formazione professionale per lavori in quota e sicurezza.">
+  <title>Vertical Solutions Academy | Formazione in quota</title>
+  <style>
+    :root { --ink:#27060b; --navy:#6c0718; --cobalt:#e30619; --sky:#ffe2e6; --ice:#fff6f7; --muted:#7c535b; --paper:#fff9f9; --white:#fff; --aqua:#ffbec8; --orange:#ff6b35; --line:#f0d8dc; --forest:#7d0819; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color:var(--ink); background:var(--paper); line-height:1.45; }
+    a { color:inherit; text-decoration:none; }
+    .wrap { width:min(1140px, calc(100% - 40px)); margin:auto; }
+    .topbar { background:#26050a; color:#ffe0e4; font-size:.88rem; }
+    .topbar .wrap { min-height:38px; display:flex; align-items:center; justify-content:space-between; gap:16px; }
+    .topbar a { text-decoration:underline; text-underline-offset:3px; }
+    header { background:rgba(255,249,249,.92); border-bottom:1px solid var(--line); position:sticky; top:0; z-index:5; backdrop-filter:blur(14px); }
+    nav { height:76px; display:flex; align-items:center; justify-content:space-between; gap:28px; }
+    .brand { display:flex; gap:10px; align-items:center; font-weight:800; letter-spacing:-.04em; font-size:1.1rem; }
+    .brand-mark { width:35px; height:35px; border-radius:11px; display:grid; place-items:center; color:var(--white); background:var(--cobalt); font-weight:900; transform:rotate(-12deg); box-shadow:0 8px 18px rgba(227,6,25,.22); }
+    .logo-brand { display:block; width:180px; height:58px; object-fit:contain; object-position:left center; mix-blend-mode:multiply; }
+    .nav-links { display:flex; align-items:center; gap:24px; color:#6d3b44; font-size:.94rem; }
+    .btn { border:0; display:inline-flex; justify-content:center; align-items:center; gap:9px; min-height:46px; padding:0 19px; cursor:pointer; font:inherit; font-weight:750; border-radius:4px; transition:transform .15s ease, background .15s ease; }
+    .btn:hover { transform:translateY(-2px); }
+    .btn-primary { background:var(--cobalt); color:var(--white); box-shadow:0 10px 22px rgba(227,6,25,.2); }
+    .btn-secondary { background:var(--ink); color:var(--white); }
+    .btn-outline { border:1px solid #a7b8b2; background:transparent; color:var(--ink); }
+    .hero { overflow:hidden; background:linear-gradient(90deg,rgba(37,4,10,.98) 0%,rgba(84,5,18,.92) 43%,rgba(59,5,14,.38) 78%), url('hero-rope-access-v1.png') center right/cover no-repeat; background-blend-mode:multiply,normal; color:white; position:relative; padding:110px 0 104px; }
+    .hero:before { content:""; position:absolute; width:590px; height:590px; right:-170px; top:-210px; border:1px solid rgba(255,190,200,.64); border-radius:50%; box-shadow:0 0 0 54px rgba(227,6,25,.1), 0 0 0 110px rgba(255,190,200,.06); }
+    .hero-grid { display:grid; grid-template-columns:1.35fr .65fr; gap:56px; align-items:end; position:relative; }
+    .eyebrow { margin:0 0 16px; color:var(--aqua); text-transform:uppercase; font-size:.78rem; letter-spacing:.13em; font-weight:800; }
+    h1 { font-size:clamp(2.8rem, 6vw, 5.4rem); max-width:820px; letter-spacing:-.065em; line-height:.95; margin:0; }
+    .hero p:not(.eyebrow) { max-width:570px; color:#cad8d4; font-size:1.13rem; margin:27px 0 32px; }
+    .hero-actions { display:flex; flex-wrap:wrap; gap:12px; }
+    .hero-note { border-left:1px solid rgba(255,255,255,.4); padding-left:22px; color:#ffe1e5; font-size:.96rem; }
+    .hero-note strong { color:var(--aqua); display:block; font-size:1.7rem; letter-spacing:-.06em; margin-bottom:2px; }
+    section { padding:94px 0; }
+    .section-label { color:var(--orange); text-transform:uppercase; letter-spacing:.13em; font-weight:800; font-size:.76rem; margin:0 0 12px; }
+    h2 { font-size:clamp(2rem,4vw,3.5rem); line-height:1; letter-spacing:-.055em; margin:0; max-width:680px; }
+    .intro-row { display:flex; justify-content:space-between; align-items:end; gap:26px; margin-bottom:42px; }
+    .intro-row > p { max-width:370px; color:var(--muted); margin:0; }
+    .course-grid { display:grid; grid-template-columns:1.35fr 1fr 1fr; gap:18px; }
+    .course { border:1px solid var(--line); background:var(--white); padding:28px; min-height:310px; display:flex; flex-direction:column; justify-content:space-between; border-radius:5px; }
+    .course.featured { color:white; background:var(--forest); border-color:var(--forest); }
+    .tag { width:max-content; font-size:.74rem; padding:6px 10px; border:1px solid currentColor; border-radius:99px; font-weight:750; }
+    .course h3 { margin:18px 0 0; font-size:1.55rem; line-height:1.05; letter-spacing:-.04em; }
+    .course p { color:var(--muted); margin:13px 0 0; }
+    .course.featured p { color:#cde2da; }
+    .course-footer { display:flex; align-items:end; justify-content:space-between; gap:12px; margin-top:25px; }
+    .course-meta { color:var(--muted); font-size:.9rem; }
+    .course.featured .course-meta { color:#dceae6; }
+    .price { font-size:1.4rem; font-weight:850; letter-spacing:-.045em; }
+    .arrow { font-size:1.45rem; line-height:1; }
+    .training-feature { padding-top:0; }
+    .training-card { min-height:420px; display:grid; grid-template-columns:1fr 1fr; overflow:hidden; border-radius:7px; background:var(--navy); color:var(--white); }
+    .training-image { min-height:360px; background:linear-gradient(90deg,rgba(83,3,17,.09),rgba(83,3,17,.28)),url('training-workshop-v1.png') center/cover no-repeat; background-blend-mode:multiply,normal; }
+    .training-copy { padding:58px; display:flex; flex-direction:column; justify-content:center; }
+    .training-copy .section-label { color:var(--aqua); }
+    .training-copy h2 { max-width:440px; }
+    .training-copy p:not(.section-label) { color:#ffd9de; max-width:430px; margin:20px 0 0; }
+    .process { background:var(--sky); }
+    .steps { display:grid; grid-template-columns:repeat(3,1fr); gap:40px; margin-top:48px; }
+    .step { border-top:1px solid #dba9b0; padding-top:18px; }
+    .step-number { color:var(--cobalt); font-weight:850; letter-spacing:-.04em; }
+    .step h3 { font-size:1.35rem; letter-spacing:-.04em; margin:30px 0 8px; }
+    .step p { color:var(--muted); margin:0; }
+    .contact { padding:0; }
+    .contact-grid { display:grid; grid-template-columns:1fr 1fr; background:linear-gradient(145deg,#7a0719,#e30619); }
+    .contact-copy, .contact-form { padding:64px; }
+    .contact-copy { color:white; }
+    .contact-copy .section-label { color:var(--aqua); }
+    .contact-copy h2 { max-width:500px; }
+    .contact-copy p:not(.section-label) { max-width:430px; margin:22px 0 0; color:#ffe0e4; }
+    .contact-form { background:var(--white); }
+    form { display:grid; gap:14px; }
+    label { font-size:.86rem; font-weight:730; }
+    input, select, textarea { display:block; width:100%; border:1px solid #bccbc6; border-radius:3px; font:inherit; font-size:1rem; padding:12px; color:var(--ink); margin-top:5px; background:white; }
+    textarea { min-height:92px; resize:vertical; }
+    .form-note { color:var(--muted); font-size:.8rem; margin:0; }
+    .status { display:none; margin:0; font-size:.9rem; color:var(--forest); font-weight:700; }
+    footer { background:#26050a; color:#ffe5e8; padding:40px 0; }
+    .footer-row { display:flex; justify-content:space-between; gap:28px; align-items:center; }
+    .footer-row small { color:#e7acb4; }
+    @media (max-width:800px) { .nav-links { display:none; } .hero { padding:80px 0; background-position:65% center; } .hero-grid, .contact-grid, .training-card { grid-template-columns:1fr; } .hero-note { display:none; } .course-grid { grid-template-columns:1fr; } .steps { grid-template-columns:1fr; gap:28px; } .contact-copy, .contact-form, .training-copy { padding:40px 24px; } .training-image { min-height:290px; } section { padding:65px 0; } .topbar .wrap { justify-content:center; } .topbar span { display:none; } }
+    @media (max-width:520px) { .wrap { width:min(100% - 28px, 1140px); } .intro-row, .footer-row { align-items:flex-start; flex-direction:column; } .hero-actions .btn { width:100%; } }
+  </style>
+</head>
+<body>
+  <div class="topbar"><div class="wrap"><span>Formazione professionale per lavori in quota e sicurezza</span><a href="#contatti">Richiedi informazioni →</a></div></div>
+  <header><nav class="wrap"><a class="brand" href="#top" aria-label="Vertical Solutions Academy, home"><img class="logo-brand" src="vertical-solutions-logo-cropped.jpg" alt="Vertical Solutions"><span class="sr-only">Vertical Solutions Academy</span></a><div class="nav-links"><a href="#corsi">Corsi</a><a href="#come-funziona">Come funziona</a><a href="#contatti">Contatti</a><a class="btn btn-secondary" href="#contatti">Parla con noi</a></div></nav></header>
+  <main id="top">
+    <section class="hero"><div class="wrap hero-grid"><div><p class="eyebrow">Formazione · Sicurezza · Competenza</p><h1>Preparati a lavorare in alto, con i piedi per terra.</h1><p>Percorsi pratici e aggiornati per professionisti e aziende che lavorano in quota. Dalla teoria al campo, con docenti qualificati.</p><div class="hero-actions"><a class="btn btn-primary" href="#corsi">Scopri i corsi <span aria-hidden="true">↓</span></a><a class="btn btn-outline" href="#contatti">Richiedi il programma</a></div></div><div class="hero-note"><strong>32 ore</strong>di formazione teorica e pratica per il corso sui sistemi di accesso e posizionamento mediante funi.</div></div></section>
+    <section id="corsi"><div class="wrap"><div class="intro-row"><div><p class="section-label">Percorsi in evidenza</p><h2>Formazione che diventa operatività.</h2></div><p>Ogni corso unisce strumenti concreti, attenzione alla normativa e pratica sul campo.</p></div><div class="course-grid">
+      <a class="course featured" href="#contatti" data-course="Addetto ai sistemi di accesso e posizionamento mediante funi"><div><span class="tag">Corso in evidenza</span><h3>Addetto ai sistemi di accesso e posizionamento mediante funi</h3><p>Teoria + pratica per operare in quota in modo consapevole e sicuro.</p></div><div class="course-footer"><span class="course-meta">32 ore · Sede e date su richiesta</span><span class="price">€999 + IVA</span></div></a>
+      <a class="course" href="#contatti" data-course="Formazione per aziende"><div><span class="tag">Aziende</span><h3>Formazione su misura per il tuo team</h3><p>Progettiamo percorsi e calendarizzazioni per le esigenze della tua azienda.</p></div><div class="course-footer"><span class="course-meta">Su richiesta</span><span class="arrow" aria-hidden="true">↗</span></div></a>
+      <a class="course" href="#contatti" data-course="Aggiornamenti sicurezza"><div><span class="tag">Aggiornamenti</span><h3>Mantieni le competenze sempre aggiornate</h3><p>Sessioni di aggiornamento e approfondimento per professionisti.</p></div><div class="course-footer"><span class="course-meta">Calendario in arrivo</span><span class="arrow" aria-hidden="true">↗</span></div></a>
+    </div></div></section>
+    <section class="training-feature"><div class="wrap"><div class="training-card"><div class="training-image" role="img" aria-label="Istruttore e corsisti verificano corde e dispositivi di sicurezza prima di una sessione pratica"></div><div class="training-copy"><p class="section-label">Metodo sul campo</p><h2>Non solo attestati: competenza da portare al lavoro.</h2><p>Ogni sessione alterna approfondimento tecnico, verifica delle attrezzature e prove pratiche guidate. Per trasformare regole e procedure in gesti sicuri.</p></div></div></div></section>
+    <section class="process" id="come-funziona"><div class="wrap"><p class="section-label">Semplice e diretto</p><h2>Hai un obiettivo. Ti aiutiamo a raggiungerlo.</h2><div class="steps"><article class="step"><span class="step-number">01</span><h3>Scegli il percorso</h3><p>Consulta i corsi disponibili o raccontaci ciò di cui hai bisogno.</p></article><article class="step"><span class="step-number">02</span><h3>Ricevi il programma</h3><p>Ti inviamo dettagli su requisiti, disponibilità, sede e condizioni per aziende.</p></article><article class="step"><span class="step-number">03</span><h3>Conferma la tua presenza</h3><p>Definiamo insieme la modalità più adatta e restiamo al tuo fianco fino al corso.</p></article></div></div></section>
+    <section class="contact" id="contatti"><div class="contact-grid"><div class="contact-copy"><p class="section-label">Richiedi informazioni</p><h2>Costruiamo il tuo prossimo passo.</h2><p>Lascia i tuoi riferimenti: riceverai il programma completo e tutte le informazioni per partecipare.</p></div><div class="contact-form"><form id="info-form"><label>Nome e cognome<input required name="nome" autocomplete="name" placeholder="Es. Mario Rossi"></label><label>Email<input required type="email" name="email" autocomplete="email" placeholder="nome@azienda.it"></label><label>Corso di interesse<select id="course" name="corso"><option>Corso da definire</option><option>Addetto ai sistemi di accesso e posizionamento mediante funi</option><option>Formazione per aziende</option><option>Aggiornamenti sicurezza</option></select></label><label>Messaggio (facoltativo)<textarea name="messaggio" placeholder="Numero di partecipanti, sede preferita, domande…"></textarea></label><button class="btn btn-primary" type="submit">Chiedi informazioni su WhatsApp <span aria-hidden="true">↗</span></button><p class="form-note">Bozza: sostituisci il numero WhatsApp nel codice prima della pubblicazione.</p><p class="status" id="status" role="status"></p></form></div></div></section>
+  </main>
+  <footer><div class="wrap footer-row"><a class="brand" href="#top"><span class="brand-mark">↗</span><span>VERTICAL SOLUTIONS ACADEMY</span></a><small>© 2026 · Bozza sito vetrina</small></div></footer>
+  <script>
+    const course = document.getElementById('course');
+    document.querySelectorAll('[data-course]').forEach(link => link.addEventListener('click', () => { course.value = link.dataset.course; }));
+    document.getElementById('info-form').addEventListener('submit', event => {
+      event.preventDefault();
+      const data = new FormData(event.currentTarget);
+      const text = `Buongiorno, sono ${data.get('nome')}. Vorrei ricevere informazioni sul corso: ${data.get('corso')}.\nEmail: ${data.get('email')}\n${data.get('messaggio') || ''}`;
+      const whatsappNumber = '393000000000'; // Sostituire con il numero WhatsApp aziendale, senza + o spazi.
+      document.getElementById('status').style.display = 'block';
+      document.getElementById('status').textContent = 'Apro WhatsApp con il messaggio già preparato…';
+      window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`, '_blank', 'noopener');
+    });
+  </script>
+</body>
+</html>
